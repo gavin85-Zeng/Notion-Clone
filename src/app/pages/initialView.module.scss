@@ -1,0 +1,88 @@
+.container {
+    margin: .2rem 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewtabContainer {
+    display: flex;
+    flex-direction: column;
+
+    &>.tabs {
+        position: relative;
+        display: flex;
+        border-bottom: 1px solid var(--hover-color);
+
+        font: {
+            size: 1rem;
+            weight: 600;
+        }
+    }
+}
+
+.tab {
+    margin: .25rem 0;
+    padding: 0 .5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}
+
+.indicator {
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    width: 100%;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #1976d2;
+}
+
+.title {
+    margin: .25rem 0;
+
+    &>input {
+        font-size: 36px;
+        font-weight: 700;
+    }
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.wh-100 {
+    @extend .w-100;
+    @extend .h-100;
+}
+
+.database {
+    padding: 0 .2rem;
+    display: inline;
+    text-decoration: underline;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}
+
+.drawerItem {
+    margin: .25rem;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &>div:hover {
+        background-color: var(--hover-color);
+    }
+}

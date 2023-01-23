@@ -1,0 +1,52 @@
+.layout {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.th {
+    @extend .layout;
+    color: var(--grey);
+}
+
+.focus {
+    border-radius: 2px;
+    box-shadow: rgb(35 131 226 / 57%) 0px 0px 0px 1px inset, rgb(35 131 226 / 35%) 0px 0px 0px 2px;
+}
+
+.tr {
+    @extend .layout;
+
+    &>[contenteditable] {
+        outline: 0px solid transparent;
+
+        &:focus {
+            @extend .focus;
+        }
+    }
+}
+
+.th>div,
+.tr>div {
+    padding: .25rem .5rem;
+}
+
+.td {
+    min-width: 2rem;
+    flex: 1;
+    border-right: 1px solid lightgray;
+
+    &:last-child {
+        border-right: 0;
+    }
+}
+
+.new {
+    display: flex;
+    align-items: center;
+    color: var(--grey);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}

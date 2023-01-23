@@ -1,0 +1,12 @@
+.container {
+    padding: {
+        top: 0;
+        left: 5%;
+        right: 5%;
+        bottom: .5rem;
+    }
+
+    overflow: auto;
+    height: calc(100vh - 45px);
+    max-height: 100%;
+}

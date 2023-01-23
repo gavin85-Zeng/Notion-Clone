@@ -1,0 +1,74 @@
+$wordColor: rgba(25, 23, 17, 0.6);
+$hover: rgba(10, 10, 10, .1);
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    color: $wordColor;
+    background: rgb(251, 251, 250);
+    user-select: none;
+
+    &-close {
+        width: 0;
+        overflow: hidden;
+    }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    z-index: 3;
+}
+
+.container {
+    position: relative;
+}
+
+.chevronDoubleLeft {
+    padding: .5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chevronDoubleLeftWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hover;
+    }
+}
+
+.block {
+    margin: 0 .2rem;
+    padding-bottom: .5rem;
+
+}
+
+.iconWrapper {
+    margin: .05rem .2rem;
+    display: flex;
+    position: relative;
+}
+
+.icon {
+    display: flex;
+    width: 100%;
+    padding: .1rem .5rem;
+    align-items: center;
+    cursor: pointer;
+    border-radius: .3rem;
+    color: $wordColor;
+
+    &:hover {
+        background: $hover;
+    }
+}
+
+.text {
+    margin-left: .5rem;
+    composes: ellipsis from "../index.css";
+}

@@ -1,0 +1,36 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+}
+
+.container {
+    position: absolute;
+    min-width: 100px;
+    background-color: white;
+    box-shadow: var(--border-line-color) 0px 6px 10px -1px;
+    border-radius: 5px;
+    cursor: default;
+    z-index: 999;
+}
+
+.wrapper {
+    position: relative;
+    padding: .25rem;
+}
+
+.item {
+    margin: .1rem 0;
+    padding: 0 .5rem;
+
+    font: {
+        weight: 300;
+        size: 14px;
+    }
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}

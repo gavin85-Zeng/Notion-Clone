@@ -1,0 +1,158 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 999;
+}
+
+.escape {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.besideContainer {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	min-width: 200px;
+	max-width: 400px;
+	height: 50vh;
+	z-index: 4;
+}
+
+.besideWrapper {
+	position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: #ffffff;
+	box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px,
+		rgb(15 15 15 / 10%) 0px 3px 6px,
+		rgb(15 15 15 / 20%) 0px 9px 24px;
+	border-radius: .3rem;
+}
+
+.besideSearch {
+	margin: 0.8rem 0;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+
+	&>input {
+		margin-left: .3rem;
+		padding: 0 .3rem;
+		border: 0;
+		box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px inset;
+		border-radius: 4px;
+		background: rgba(242, 241, 238, 0.6);
+		line-height: 1.5;
+		font-size: 14px;
+		width: 100%;
+		outline: 0;
+
+		&:focus-within {
+			box-shadow: rgb(35 131 226 / 57%) 0px 0px 0px 1px inset, rgb(35 131 226 / 35%) 0px 0px 0px 2px !important;
+		}
+	}
+}
+
+.bisideContentConatiner {
+	padding: .2rem;
+	overflow: auto;
+}
+
+.besideContent {
+	display: flex;
+	align-items: center;
+	padding: 0 .5rem;
+	cursor: pointer;
+	border-radius: 4px;
+
+	&:hover {
+		background-color: rgba(77, 77, 77, 0.1);
+	}
+
+	& .iconWrapper {
+		@extend .besideContent;
+
+		&:hover {
+			background-color: rgb(218, 216, 216);
+		}
+	}
+}
+
+.besideContentTitle {
+	white-space: nowrap;
+	flex-grow: 1;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.dialogAbsContainer {
+	position: absolute;
+	left: 72px;
+	top: 72px;
+	right: 72px;
+	bottom: 72px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	font-size: 14px;
+	margin: 0 auto;
+	max-width: 900px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: rgba(15, 15, 15, 0.1) 4px 4px 4px;
+	border-radius: 5px;
+}
+
+.optionsBar {
+	padding: 0 1.5rem;
+	height: 2.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	& .iconWrapper {
+		@extend .besideContent;
+	}
+}
+
+.loadingContainer {
+	margin: 1rem;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}
+
+.lds-dual-ring {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+
+	&::after {
+		content: " ";
+		display: block;
+		width: 64px;
+		height: 64px;
+		margin: 8px;
+		border-radius: 50%;
+		border: 6px solid #fff;
+		border-color: #bee0ec transparent #bee0ec transparent;
+		animation: lds-dual-ring 1.2s linear infinite;
+	}
+}
+
+@keyframes lds-dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: clamp(.75rem, 90% ,2rem);
+  line-height: 24px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --border-line-color:rgb(233, 233, 231);
+  --hover-color: rgba(211, 211, 203, .3);
+  --grey: rgba(55, 53, 47, 0.5);
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-track {
+	background: rgb(237, 236, 233);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(211, 209, 203);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(179, 177, 171);
+}
+
+a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.virtualBtn {
+  padding: .25rem;
+  flex: .3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey);
+  max-width: 40px;
+  max-height: 40px;
+  cursor: pointer;
+
+}
+
+.virtualBtn:hover {
+    background-color: var(--hover-color);
+}
+
+input {
+  border: 0;
+  outline: none;
+	width: 100%;
+  background-color: transparent;
+}

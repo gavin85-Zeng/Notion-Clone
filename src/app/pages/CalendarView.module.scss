@@ -1,0 +1,244 @@
+.container {
+    text-align: center;
+    user-select: none;
+    container: calendar / inline-size;
+}
+
+.absoluteWH100 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+$today-popup-color: rgb(235, 87, 87);
+$weekend-color: rgb(251, 251, 250);
+
+.headerContainer {
+    margin-top: 0;
+}
+
+.bodyContainer {
+    margin-top: 1px;
+    overflow: hidden;
+    box-shadow: var(--border-line-color) -1px 0px 0px;
+}
+
+.controller {
+    flex-shrink: 0;
+    height: 24px;
+    min-width: 24px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}
+
+.arrow {
+    flex-shrink: 0;
+    height: 24px;
+    min-width: 24px;
+    composes: virtualBtn from "../index.css";
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    font-weight: 600;
+    padding-left: 8px;
+
+    margin: {
+        top: 0;
+        left: 8px;
+        right: 8px;
+    }
+
+    line-height: 1;
+    font-size: 14px;
+    text-align: left;
+}
+
+@mixin f12-grey-hc ($height) {
+    font-size: 12px;
+    @extend .grey;
+    height: $height + px;
+}
+
+.header {
+    display: flex;
+    margin-top: 0px;
+    line-height: 1.5;
+    box-shadow: var(--border-line-color) 0px 1px 0px;
+    align-items: center;
+
+    &-font-h5 {
+        @include f12-grey-hc(5);
+    }
+
+    &-font-h24 {
+        @include f12-grey-hc(24);
+    }
+}
+
+.grey {
+    color: var(--grey);
+}
+
+.border-rb {
+    border-right: 1px solid var(--border-line-color);
+    border-bottom: 1px solid var(--border-line-color);
+}
+
+.cell {
+    position: relative;
+    @extend .border-rb;
+    overflow: hidden;
+    min-height: 124px;
+
+    &-sn {
+        margin-right: 4px;
+    }
+
+    &:nth-child(7n+6),
+    &:nth-child(7n) {
+        @extend .cell;
+        background: $weekend-color;
+    }
+}
+
+@container calendar (width < 375px) {
+    .cell-sn {
+        display: none;
+    }
+}
+
+.cellText {
+    position: relative;
+
+    padding: {
+        top: 4px;
+        right: 8px;
+    }
+
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+    text-align: right;
+    z-index: 0;
+}
+
+.todayPopup {
+    padding: 2px;
+    border-radius: 100%;
+    color: white;
+    background: $today-popup-color;
+}
+
+.fx {
+    flex: 1;
+}
+
+
+
+.toggle-ele {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    @extend .border-rb;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid rgba(15, 15, 15, .8);
+    }
+}
+
+@mixin g-horizontal($horizontal) {
+    line-height: 2;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat($horizontal, 1fr);
+}
+
+.g-4 {
+    @include g-horizontal(4);
+
+    & div {
+        @extend .toggle-ele;
+    }
+}
+
+.g-7 {
+    @include g-horizontal(7);
+}
+
+.plusBox {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: rgba(15 15 15 / 10%) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}
+
+.plusIcon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    fill: rgba(55, 53, 47, 0.45);
+    flex-shrink: 0;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+
+.flex-xy-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskItem {
+    padding-left: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 12px;
+    color: #494747;
+}
+
+.taskItemWrapper {
+    position: relative;
+    margin: 4px 4px;
+    border-radius: 4px;
+    border: 1.5px solid rgb(222, 222, 222);
+    box-shadow: rgba(15 15 15 / 20%) 1px 1px 4px;
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}
